@@ -321,7 +321,7 @@ h1 {
 h2 {
 	font-size: 1.5rem;
 	line-height: 1;
-	letter-spacing: 0.5rem;
+	/* letter-spacing: 0.5rem; */
 }
 
 h3 {
@@ -343,7 +343,7 @@ h6 {
 @media screen and (max-width: 426px) {
 
 	.majorh2 {
-		font-size: 0.5rem;
+		font-size: 1.3rem;
 	}
 }
 
