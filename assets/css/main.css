@@ -257,10 +257,15 @@ a:hover {
 	border-bottom-color: transparent;
 }
 
+.intro-h4 {
+	font-size: 1rem;
+}
+
 strong,
 b {
 	color: #ffffff;
 	font-weight: 600;
+	/* font-size: 1rem; */
 }
 
 em,
