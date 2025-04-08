@@ -1961,6 +1961,10 @@ body.is-preload #footer {
 	}
 }
 
+.contact-text {
+	font-size: 22px;
+}
+
 /* Button Resume */
 .pushable {
 	background-color: #9bc1f8;
