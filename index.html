@@ -49,7 +49,8 @@
 				<h2 class="major majorh2">From Motivation to Mastery</h2>
 				<span class="image main"><img src="images/p1.jpg" alt="My coding setup" /></span>
 
-				<p><strong>Two years ago, </strong>I chose <strong> front-end</strong> development as a path to <strong>financial stability</strong> and
+				<p><strong>Two years ago, </strong>I chose <strong> front-end</strong> development as a path to
+					<strong>financial stability</strong> and
 					<strong>professional growth</strong>. What began as a practical decision quickly turned into a
 					passion for <strong>solving real-world problems</strong> through code.
 				</p>
@@ -57,16 +58,20 @@
 				<h3>My Evolution</h3>
 				<ul>
 					<li>🛠️ <strong>Started </strong> with web development fundamentals, mastering
-						<strong>HTML</strong> and <strong>CSS</strong>.</li>
+						<strong>HTML</strong> and <strong>CSS</strong>.
+					</li>
 					<li>⚡ <strong>Expanded</strong> into <strong>JavaScript</strong>, <strong>TypeScript</strong>, and
 						<strong>React.js</strong>, focusing on component-based architecture, state management, and React
-						Hooks.</li>
+						Hooks.
+					</li>
 					<li>🚀 <strong>Specialized</strong> in front-end development with <strong>Next.js</strong> and
 						<strong>Tailwind CSS</strong>, optimizing applications for <strong>SEO</strong>, performance,
-						and scalability.</li>
+						and scalability.
+					</li>
 					<li>🔹 Gained expertise in <strong>OOP</strong>, <strong>DOM manipulation</strong>,
 						<strong>JSX</strong>, and modern Hooks like <code>useState</code>, <code>useEffect</code>, and
-						custom Hooks to enhance functionality.</li>
+						custom Hooks to enhance functionality.
+					</li>
 					<li>🎯 Integrated various development tools to build <strong>production-ready applications</strong>
 						from scratch.</li>
 				</ul>
@@ -328,25 +333,37 @@
 					</ul>
 				</form>
 
-				<ul class="icons">
-					<li>
-						<a href="https://github.com/Khaled0-0" target="_blank" class="icon brands fa-github">
-							<span class="label">GitHub</span>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/khaled-nasser-6a8524331" target="_blank"
-							class="icon brands fa-linkedin">
-							<span class="label">LinkedIn</span>
-						</a>
-					</li>
-					<li>
-						<a href="https://vercel.com/khaleds-projects-abf08b05" target="_blank"
-							class="icon solid fa-cloud">
-							<span class="label">Vercel</span>
-						</a>
-					</li>
-				</ul>
+				<div class="div-but">
+					<ul class="icons">
+						<li>
+							<a href="https://github.com/Khaled0-0" target="_blank" class="icon brands fa-github">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/khaled-nasser-6a8524331" target="_blank"
+								class="icon brands fa-linkedin">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://vercel.com/khaleds-projects-abf08b05" target="_blank"
+								class="icon solid fa-cloud">
+								<span class="label">Vercel</span>
+							</a>
+						</li>
+					</ul>
+					<button class="pushable" id="downloadBtn">Download Resume</button>
+
+					<script>
+						document.getElementById('downloadBtn').addEventListener('click', function () {
+							const link = document.createElement('a');
+							link.href = 'images/KN frontend developer(CV).pdf';
+							link.download = 'KN frontend developer(CV).pdf'; // Forces download
+							link.click();
+						});
+					</script>
+				</div>
 			</article>
 
 		</div>

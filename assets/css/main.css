@@ -1933,7 +1933,7 @@ body.is-preload #footer {
 #header .logo {
 	width: 5.5rem;
 	height: 5.5rem;
-	border: solid 1px #9bc1f8;
+	border: solid 1px black;
 	border-radius: 100%;
 	position: relative;
 	overflow: hidden;
@@ -1947,4 +1947,27 @@ body.is-preload #footer {
 	height: 100%;
 	object-fit: cover;
 	border-radius: 100%;
+}
+
+.div-but {
+	display: flex;
+	justify-content: space-between;
+}
+
+@media (max-width:425px) {
+	.div-but {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+/* Button Resume */
+.pushable {
+	background-color: #9bc1f8;
+	color: black !important;
+	font-weight: 600;
+}
+
+.pushable:hover {
+	background-color: white;
 }
