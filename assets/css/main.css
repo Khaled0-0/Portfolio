@@ -1975,3 +1975,22 @@ body.is-preload #footer {
 .pushable:hover {
 	background-color: white;
 }
+
+.green-color {
+	color: #64ffda;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.gr {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	align-items: center;
+	justify-content: center;
+	/* cursor: pointer; */
+}
+
+.dr {
+	cursor: pointer;
+}
