@@ -79,6 +79,7 @@ export default function Navbar() {
    }
 
    return (
+      <>
       <motion.nav
          initial={{ y: -100 }}
          animate={{ y: 0 }}
@@ -238,66 +239,68 @@ export default function Navbar() {
             </div>
          </div>
 
-         {/* Mobile Menu Overlay */}
+         {/* Mobile Menu */}
          <AnimatePresence>
             {isOpen && (
-               <>
-                  {/* Backdrop - Click to Close */}
-                  <motion.div
-                     initial={{ opacity: 0 }}
-                     animate={{ opacity: 1 }}
-                     exit={{ opacity: 0 }}
-                     className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-                     onClick={() => setIsOpen(false)}
-                  />
-                  
-                  {/* Mobile Menu */}
                   <motion.div
                      initial={{ opacity: 0, height: 0 }}
                      animate={{ opacity: 1, height: 'auto' }}
                      exit={{ opacity: 0, height: 0 }}
                      className="lg:hidden backdrop-blur-md bg-white/90 dark:bg-dark-950/90 border-t border-dark-200/20 dark:border-dark-700/20 relative z-50"
                   >
-                  <div className="px-4 py-6 space-y-2">
-                     {navLinks.map((link, index) => {
-                        const isActive = activeSection === link.href.substring(1)
-                        return (
-                           <motion.a
-                              key={link.name}
-                              href={link.href}
-                              onClick={(e) => {
-                                 e.preventDefault()
-                                 scrollToSection(link.href)
-                              }}
-                              className={`block px-4 py-3 rounded-lg transition-all duration-200 ${isActive
-                                 ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold shadow-md not-italic'
-                                 : 'text-dark-700 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700'
-                                 }`}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: index * 0.1 }}
-                           >
-                              {link.name}
-                           </motion.a>
-                        )
-                     })}
+                     <div className="px-4 py-6 space-y-2">
+                        {navLinks.map((link, index) => {
+                           const isActive = activeSection === link.href.substring(1)
+                           return (
+                              <motion.a
+                                 key={link.name}
+                                 href={link.href}
+                                 onClick={(e) => {
+                                    e.preventDefault()
+                                    scrollToSection(link.href)
+                                 }}
+                                 className={`block px-4 py-3 rounded-lg transition-all duration-200 ${isActive
+                                    ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold shadow-md not-italic'
+                                    : 'text-dark-700 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700'
+                                    }`}
+                                 initial={{ opacity: 0, x: -20 }}
+                                 animate={{ opacity: 1, x: 0 }}
+                                 transition={{ delay: index * 0.1 }}
+                              >
+                                 {link.name}
+                              </motion.a>
+                           )
+                        })}
 
-                     {/* Mobile Download CV Button */}
-                     <motion.button
-                        onClick={handleDownloadCV}
-                        className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg font-bold flex items-center justify-center gap-2 shadow-md"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                     >
-                        <HiDownload className="w-5 h-5" />
-                        <span className="not-italic">Download Resume</span>
+                        {/* Mobile Download CV Button */}
+                        <motion.button
+                           onClick={handleDownloadCV}
+                           className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg font-bold flex items-center justify-center gap-2 shadow-md"
+                           initial={{ opacity: 0, y: 20 }}
+                           animate={{ opacity: 1, y: 0 }}
+                           transition={{ delay: 0.5 }}
+                        >
+                           <HiDownload className="w-5 h-5" />
+                           <span className="not-italic">Download Resume</span>
                      </motion.button>
                   </div>
                </motion.div>
-               </>
             )}
          </AnimatePresence>
       </motion.nav>
+      
+      {/* Mobile Menu Backdrop - Outside Navbar */}
+      <AnimatePresence>
+         {isOpen && (
+            <motion.div
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               exit={{ opacity: 0 }}
+               className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+               onClick={() => setIsOpen(false)}
+            />
+         )}
+      </AnimatePresence>
+      </>
    )
 }
