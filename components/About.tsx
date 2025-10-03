@@ -223,30 +223,31 @@ export default function About() {
                   ))}
                </div>
 
-               {/* AI Advantages */}
+               {/* AI Advantages - Compact & Modern */}
                <motion.div
-                  className="bg-gradient-to-br from-primary-50 to-purple-50 dark:from-primary-900/10 dark:to-purple-900/10 rounded-2xl p-8 border border-primary-500/20 dark:border-primary-500/30"
+                  className="bg-white dark:bg-dark-800 rounded-2xl p-6 border border-dark-200 dark:border-dark-700 shadow-lg"
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ delay: 0.9 }}
                >
-                  <div className="flex items-center gap-3 mb-6">
-                     <div className="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center">
-                        <HiCheckCircle className="w-6 h-6 text-white" />
-                     </div>
-                     <h4 className="text-xl font-bold text-dark-900 dark:text-white">Enhanced Productivity & Code Quality</h4>
-                  </div>
+                  {/* Compact Header */}
+                  <h4 className="text-lg font-bold text-dark-900 dark:text-white mb-5 flex items-center gap-2">
+                     <HiCheckCircle className="w-6 h-6 text-primary-500" />
+                     <span>Enhanced Productivity & Code Quality</span>
+                  </h4>
+
+                  {/* Compact Grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                      {aiAdvantages.map((advantage, index) => (
                         <motion.div
                            key={advantage}
-                           className="flex items-center gap-3 text-dark-700 dark:text-dark-300"
-                           initial={{ opacity: 0, x: -20 }}
-                           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                           transition={{ delay: 1 + index * 0.1 }}
+                           className="flex items-center gap-3 p-3 rounded-xl bg-dark-50 dark:bg-dark-700/50 hover:bg-primary-50 dark:hover:bg-primary-900/20 border border-transparent hover:border-primary-500/30 transition-all duration-200"
+                           initial={{ opacity: 0, x: -10 }}
+                           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                           transition={{ delay: 1 + index * 0.05 }}
                         >
                            <HiCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                           <span className="text-sm font-medium">{advantage}</span>
+                           <span className="text-sm font-medium text-dark-800 dark:text-white">{advantage}</span>
                         </motion.div>
                      ))}
                   </div>
@@ -258,15 +259,15 @@ export default function About() {
                {motivations.map((item, index) => (
                   <motion.div
                      key={item.title}
-                     className="bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-primary-500/20 dark:border-primary-500/30 shadow-lg hover:shadow-2xl hover:border-primary-500/40 transition-all duration-300 hover:-translate-y-2"
+                     className="group bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-primary-500/20 dark:border-primary-500/30 shadow-lg hover:shadow-2xl hover:border-primary-500/50 dark:hover:border-primary-500/60 transition-all duration-300 hover:-translate-y-2"
                      initial={{ opacity: 0, y: 30 }}
                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                      transition={{ delay: 0.5 + index * 0.1 }}
                   >
-                     <div className="w-14 h-14 bg-primary-500/10 dark:bg-primary-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <item.icon className="w-8 h-8 text-primary-500" />
+                     <div className="w-14 h-14 bg-primary-500/10 dark:bg-primary-500/20 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-500/30 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300">
+                        <item.icon className="w-8 h-8 text-primary-500 group-hover:scale-110 transition-transform duration-300" />
                      </div>
-                     <h3 className="text-xl font-bold mb-3 text-dark-900 dark:text-white">{item.title}</h3>
+                     <h3 className="text-xl font-bold mb-3 text-dark-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{item.title}</h3>
                      <p className="text-dark-600 dark:text-dark-400 leading-relaxed">{item.description}</p>
                   </motion.div>
                ))}
