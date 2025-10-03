@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaled Nasser - Frontend Developer Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 30px 50px;
+            background: #fff;
+        }
+        
+        @media print {
+            body {
+                padding: 15px 35px;
+            }
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0ea5e9;
+            padding-bottom: 15px;
+        }
+        
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 20px;
+            color: #0ea5e9;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: #475569;
+        }
+        
+        .contact-info a {
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #1e293b;
+            text-transform: uppercase;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        
+        /* Professional Summary */
+        .summary {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #475569;
+            text-align: justify;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 10px;
+        }
+        
+        .skill-category-title {
+            font-weight: bold;
+            color: #0ea5e9;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .skill-list {
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.8;
+        }
+        
+        /* Experience/Projects */
+        .project-item {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .project-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        .project-link {
+            font-size: 11px;
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+        
+        .project-tech {
+            font-size: 12px;
+            color: #0ea5e9;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .project-description {
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.7;
+        }
+        
+        .project-description ul {
+            margin-left: 18px;
+            margin-top: 3px;
+        }
+        
+        .project-description li {
+            margin-bottom: 2px;
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .education-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        .education-details {
+            font-size: 13px;
+            color: #475569;
+        }
+        
+        /* Achievements */
+        .achievements-list {
+            list-style: none;
+        }
+        
+        .achievements-list li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.7;
+        }
+        
+        .achievements-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1 class="name">KHALED NASSER</h1>
+        <div class="title">Frontend Developer | React.js | Next.js | TypeScript Specialist</div>
+        <div class="contact-info">
+            <span>🌐 <a href="https://portfolio-nine-gamma-94.vercel.app/" target="_blank"><strong>Portfolio Website</strong></a></span>
+            <span>📧 khaledmaster999@gmail.com</span>
+            <span>📱 +20 11 4065 7517</span>
+            <span><a href="https://github.com/Khaled0-0" target="_blank">GitHub: Khaled0-0</a></span>
+            <span><a href="https://www.linkedin.com/in/khaled-nasser-6a8524331" target="_blank">LinkedIn</a></span>
+        </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary">
+            Passionate Frontend Developer with expertise in building high-performance, responsive web applications using modern JavaScript frameworks. 
+            Currently interning at Evu LLC (New York-based venture studio) developing HyperBuds, an AI-powered creator collaboration platform. 
+            Started development journey in January 2023 with rapid progression in React.js, Next.js, and TypeScript. Specialized in transforming creative designs 
+            into pixel-perfect, production-ready applications with clean, maintainable code. Leveraging AI-enhanced workflows (Cursor AI, ChatGPT, Claude) 
+            to deliver exceptional code quality and productivity. Proven track record of building 15+ deployed projects including e-commerce platforms, 
+            real-time applications, and complex full-stack solutions. Strong commitment to web accessibility, SEO optimization, and performance best practices.
+        </p>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Frontend Developer Intern - Evu LLC, New York</span>
+                <span style="font-size: 13px; color: #0ea5e9; font-weight: 600;">Current</span>
+            </div>
+            <div class="project-tech">Next.js 15 | React 19 | TypeScript | Tailwind CSS 4 | Socket.IO | Stripe | Zustand | TanStack Query</div>
+            <div class="project-description">
+                <strong>HyperBuds - AI-Powered Creator Collaboration Platform</strong><br>
+                Comprehensive platform connecting content creators for partnerships using AI matching algorithms.
+                <ul>
+                    <li><strong>AI Matching:</strong> Intelligent creator matching with compatibility scoring (niche, audience, engagement)</li>
+                    <li><strong>Real-Time Messaging:</strong> Socket.IO-powered chat with typing indicators, read receipts, file sharing</li>
+                    <li><strong>Rizz Score System:</strong> Performance tracking analyzing engagement, growth, collaboration success (0-100)</li>
+                    <li><strong>Payment Integration:</strong> Stripe subscription management and earnings dashboard</li>
+                    <li><strong>State Management:</strong> Global state (Zustand) and server state (TanStack Query) architecture</li>
+                    <li><strong>Modern UI/UX:</strong> Responsive design with dark/light mode, glassmorphism, Framer Motion animations</li>
+                </ul>
+                <strong>Stack:</strong> Next.js 15, React 19, TypeScript, Tailwind CSS 4, Socket.IO, Zustand, TanStack Query, Stripe
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-category-title">Frontend Development</div>
+                <div class="skill-list">
+                    React.js, Next.js 14, TypeScript, JavaScript ES6+, HTML5, CSS3, Tailwind CSS, 
+                    Responsive Design, Framer Motion, React Hooks, State Management, JSX
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Backend & APIs</div>
+                <div class="skill-list">
+                    Node.js, Express.js, MongoDB, Socket.IO, REST APIs, Rapid API, JWT Authentication, 
+                    Sanity CMS
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Tools & Platforms</div>
+                <div class="skill-list">
+                    Git/GitHub, Vercel Deployment, Figma, VS Code, NPM/Yarn, Chrome DevTools, 
+                    Formspree, Postman
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">AI & Productivity Tools</div>
+                <div class="skill-list">
+                    Cursor AI, ChatGPT, Claude AI, AI-Enhanced Development Workflows
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Best Practices</div>
+                <div class="skill-list">
+                    SEO Optimization, Web Accessibility (WCAG), Performance Optimization, 
+                    Clean Code Principles, Responsive Design, Cross-Browser Compatibility
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Additional Skills</div>
+                <div class="skill-list">
+                    Component-Based Architecture, Server-Side Rendering, Static Site Generation, 
+                    Agile Methodologies, Problem Solving
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Projects -->
+    <div class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">BoatingX - E-Commerce Platform</span>
+                <a href="https://www.boatingx.co/" class="project-link" target="_blank">boatingx.co</a>
+            </div>
+            <div class="project-tech">Next.js | React.js | Tailwind CSS | Vercel | SEO Optimized</div>
+            <div class="project-description">
+                Modern e-commerce web platform for buying boats and marine products with custom domain integration.
+                <ul>
+                    <li>Designed and developed fully responsive UI/UX for seamless shopping experience</li>
+                    <li>Implemented secure checkout process for purchasing boats and marine accessories</li>
+                    <li>Optimized for search engine visibility and improved performance across all devices</li>
+                    <li>Custom domain integration and deployment on Vercel for reliable hosting</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Real-Time Chat Application</span>
+                <a href="https://chat-app-2-eta.vercel.app/" class="project-link" target="_blank">Live Demo</a>
+            </div>
+            <div class="project-tech">React.js | Socket.IO | MongoDB | Node.js | Express.js | TypeScript | JWT</div>
+            <div class="project-description">
+                Full-stack real-time messaging application with authentication and live user features.
+                <ul>
+                    <li>Built responsive real-time chat with Socket.IO for instant message delivery</li>
+                    <li>Implemented JWT authentication and custom user avatar system</li>
+                    <li>Developed live user status updates and typing indicators</li>
+                    <li>Integrated MongoDB for data persistence and Express.js backend API</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Browser Extension Manager</span>
+                <a href="https://extension-manager-lyart.vercel.app/" class="project-link" target="_blank">Live Demo</a>
+            </div>
+            <div class="project-tech">React.js | Next.js | Tailwind CSS | Dark/Light Mode</div>
+            <div class="project-description">
+                Streamlined interface for managing browser add-ons with modern features.
+                <ul>
+                    <li>Clean grid layout with icons, names, and descriptions</li>
+                    <li>Implemented dark/light mode switching for user comfort</li>
+                    <li>Built active/inactive tabs for quick filtering and management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Desserts Menu & Ordering System</span>
+                <a href="https://food-list-kohl.vercel.app/" class="project-link" target="_blank">Live Demo</a>
+            </div>
+            <div class="project-tech">React.js | Next.js | Tailwind CSS | State Management</div>
+            <div class="project-description">
+                Full-featured ordering system with dynamic cart and real-time price calculations.
+                <ul>
+                    <li>Dynamic cart with automatic item count and total price updates</li>
+                    <li>Interactive checkout with quantity controls and real-time subtotal</li>
+                    <li>Built using functional programming for efficient state management</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Weather Application</span>
+                <a href="https://weather-app-nine-xi-73.vercel.app/" class="project-link" target="_blank">Live Demo</a>
+            </div>
+            <div class="project-tech">React.js | JavaScript ES6+ | Weather API | Geolocation</div>
+            <div class="project-description">
+                Real-time weather data visualization with location-based forecasts and interactive features.
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Additional Projects</span>
+            </div>
+            <div class="project-description">
+                <strong>E-Commerce Platform:</strong> Full shopping platform with product catalog and checkout (React.js, Next.js, MongoDB)<br>
+                <strong>Todo Application:</strong> Task management with drag-and-drop (React.js, Tailwind CSS)<br>
+                <strong>Age Calculator:</strong> Modern calculator with validation and animations (React.js, Next.js)
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Development -->
+    <div class="section">
+        <h2 class="section-title">Professional Development Journey</h2>
+        
+        <div class="achievements-list">
+            <li><strong>Professional Frontend Developer (Current):</strong> Building production-ready applications with modern frameworks, 
+                creating seamless user experiences, and delivering high-quality, scalable solutions using React, Next.js, and TypeScript.</li>
+            
+            <li><strong>Rapid Growth & Mastery:</strong> Advanced through React ecosystem, Next.js, TypeScript, and modern development 
+                practices while building 15+ real-world projects deployed on Vercel.</li>
+            
+            <li><strong>Foundation Building:</strong> Mastered HTML5, CSS3, JavaScript fundamentals, responsive design principles, 
+                and web development best practices through intensive hands-on learning since January 2023.</li>
+        </div>
+    </div>
+
+    <!-- AI-Enhanced Development -->
+    <div class="section">
+        <h2 class="section-title">AI-Enhanced Development Workflow</h2>
+        <div class="summary">
+            Utilizing cutting-edge AI tools to enhance productivity and code quality:
+        </div>
+        <ul class="achievements-list">
+            <li><strong>Cursor AI:</strong> AI-powered code editor for intelligent code completion and refactoring</li>
+            <li><strong>ChatGPT & Claude AI:</strong> Problem-solving, code review, optimization, and documentation assistance</li>
+            <li><strong>Benefits:</strong> Write clean, readable code following industry best practices; faster debugging; 
+                enhanced code quality and consistency; rapid prototyping and iteration</li>
+        </ul>
+    </div>
+
+    <!-- Key Competencies -->
+    <div class="section">
+        <h2 class="section-title">Key Competencies</h2>
+        <ul class="achievements-list">
+            <li>Component-based architecture and reusable UI component development</li>
+            <li>State management with React Hooks (useState, useEffect, useContext, custom hooks)</li>
+            <li>Server-Side Rendering (SSR) and Static Site Generation (SSG) with Next.js</li>
+            <li>RESTful API integration and real-time data handling with Socket.IO</li>
+            <li>Responsive design implementation across all devices (mobile-first approach)</li>
+            <li>Performance optimization and Core Web Vitals improvement</li>
+            <li>SEO optimization for improved search engine visibility</li>
+            <li>Git version control and collaborative development workflows</li>
+            <li>Agile development and rapid prototyping</li>
+            <li>Cross-browser compatibility and accessibility standards (WCAG)</li>
+        </ul>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2 class="section-title">Education & Training</h2>
+        <div class="education-item">
+            <div class="education-title">Self-Directed Learning - Web Development</div>
+            <div class="education-details">January 2023 - Present | Online Platforms & Hands-On Projects</div>
+            <div class="project-description" style="margin-top: 5px;">
+                Intensive self-study through online courses, tutorials, documentation, and building real-world projects. 
+                Focused on modern web development technologies including React ecosystem, TypeScript, and full-stack JavaScript.
+            </div>
+        </div>
+        
+        <div class="education-item">
+            <div class="education-title">High School Graduate</div>
+            <div class="education-details">Comprehensive secondary education</div>
+        </div>
+    </div>
+
+    <!-- Professional Attributes -->
+    <div class="section">
+        <h2 class="section-title">Professional Attributes</h2>
+        <div class="skills-grid">
+            <ul class="achievements-list">
+                <li>Strong problem-solving and analytical skills</li>
+                <li>Attention to detail and code quality</li>
+                <li>Fast learner with adaptability to new technologies</li>
+                <li>Self-motivated and proactive approach</li>
+            </ul>
+            <ul class="achievements-list">
+                <li>Excellent debugging and troubleshooting abilities</li>
+                <li>Collaborative mindset for team environments</li>
+                <li>Commitment to continuous learning and improvement</li>
+                <li>Passion for creating exceptional user experiences</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Links -->
+    <div class="section">
+        <h2 class="section-title">Online Presence</h2>
+        <div class="project-description">
+            <strong>GitHub:</strong> <a href="https://github.com/Khaled0-0" target="_blank">github.com/Khaled0-0</a><br>
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/khaled-nasser-6a8524331" target="_blank">linkedin.com/in/khaled-nasser-6a8524331</a><br>
+            <strong>Vercel Projects:</strong> <a href="https://vercel.com/khaleds-projects-abf08b05" target="_blank">vercel.com/khaleds-projects-abf08b05</a><br>
+            <strong>WhatsApp:</strong> +20 11 4065 7517
+        </div>
+    </div>
+
+    <!-- Keywords for ATS (hidden) -->
+    <div style="font-size: 1px; color: white;">
+        React React.js ReactJS Next.js NextJS Next.js 15 React 19 TypeScript JavaScript ES6 HTML5 CSS3 Tailwind TailwindCSS Tailwind CSS 4
+        MongoDB Node.js NodeJS Express.js Frontend Front-end Front End Developer Web Developer Intern Internship
+        UI UX Responsive Design Mobile First Git GitHub Version Control Vercel Deployment 
+        API REST API Socket.IO Real-time Realtime WebSocket Authentication JWT Zustand TanStack Query React Query
+        Performance Optimization SEO Search Engine Optimization Accessibility WCAG 
+        Agile Scrum Component State Management Hooks useState useEffect useContext Custom Hooks
+        SSR Server Side Rendering SSG Static Site Generation Figma Design Implementation
+        AI Artificial Intelligence ChatGPT Claude Cursor AI Matching AI Powered Machine Learning
+        Stripe Payment Integration E-commerce Payment Processing Subscription Management
+        Framer Motion Animation Real-time Messaging Chat Application WebRTC Streaming
+        Problem Solving Team Player Collaborative Development Full Stack
+        Evu LLC New York Venture Studio Creator Economy Platform Development
+        Production Ready TypeScript Typing Unit Testing Documentation
+    </div>
+</body>
+</html>
+
