@@ -59,14 +59,16 @@ export default function Navbar() {
 
    const scrollToSection = (href: string) => {
       setIsOpen(false)
-      const element = document.querySelector(href)
-      if (element) {
-         const offsetTop = (element as HTMLElement).offsetTop - 80
-         window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-         })
-      }
+      setTimeout(() => {
+         const element = document.querySelector(href)
+         if (element) {
+            const offsetTop = (element as HTMLElement).offsetTop - 80
+            window.scrollTo({
+               top: offsetTop,
+               behavior: 'smooth'
+            })
+         }
+      }, 300)
    }
 
    const handleDownloadCV = () => {
