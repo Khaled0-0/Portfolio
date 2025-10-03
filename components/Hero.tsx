@@ -11,7 +11,11 @@ export default function Hero() {
    const scrollToSection = (href: string) => {
       const element = document.querySelector(href)
       if (element) {
-         element.scrollIntoView({ behavior: 'smooth' })
+         const offsetTop = (element as HTMLElement).offsetTop - 80
+         window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+         })
       }
    }
 
