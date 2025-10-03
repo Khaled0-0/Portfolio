@@ -83,7 +83,7 @@ const projects = [
 
 export default function Projects() {
    const ref = useRef(null)
-   const isInView = useInView(ref, { once: true, margin: '-50px', amount: 0.2 })
+   const isInView = useInView(ref, { once: true, margin: '0px', amount: 0.1 })
    const [filter, setFilter] = useState<'all' | 'featured'>('all')
 
    const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.featured)

@@ -54,7 +54,7 @@ const socialLinks = [
 
 export default function Contact() {
    const ref = useRef(null)
-   const isInView = useInView(ref, { once: true, margin: '-50px', amount: 0.2 })
+   const isInView = useInView(ref, { once: true, margin: '0px', amount: 0.1 })
    const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

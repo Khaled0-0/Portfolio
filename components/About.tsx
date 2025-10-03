@@ -86,7 +86,7 @@ const aiAdvantages = [
 
 export default function About() {
    const ref = useRef(null)
-   const isInView = useInView(ref, { once: true, margin: '-50px', amount: 0.2 })
+   const isInView = useInView(ref, { once: true, margin: '0px', amount: 0.1 })
 
    return (
       <section id="about" className="section-container" ref={ref}>

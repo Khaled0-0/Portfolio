@@ -52,7 +52,7 @@ const additionalSkills = [
 
 export default function Skills() {
    const ref = useRef(null)
-   const isInView = useInView(ref, { once: true, margin: '-50px', amount: 0.2 })
+   const isInView = useInView(ref, { once: true, margin: '0px', amount: 0.1 })
    const [activeCategory, setActiveCategory] = useState<string>('all')
 
    const allSkills = [...mainSkills, ...aiTools]
