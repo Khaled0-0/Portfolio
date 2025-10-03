@@ -238,15 +238,26 @@ export default function Navbar() {
             </div>
          </div>
 
-         {/* Mobile Menu */}
+         {/* Mobile Menu Overlay */}
          <AnimatePresence>
             {isOpen && (
-               <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="lg:hidden backdrop-blur-md bg-white/90 dark:bg-dark-950/90 border-t border-dark-200/20 dark:border-dark-700/20"
-               >
+               <>
+                  {/* Backdrop - Click to Close */}
+                  <motion.div
+                     initial={{ opacity: 0 }}
+                     animate={{ opacity: 1 }}
+                     exit={{ opacity: 0 }}
+                     className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+                     onClick={() => setIsOpen(false)}
+                  />
+                  
+                  {/* Mobile Menu */}
+                  <motion.div
+                     initial={{ opacity: 0, height: 0 }}
+                     animate={{ opacity: 1, height: 'auto' }}
+                     exit={{ opacity: 0, height: 0 }}
+                     className="lg:hidden backdrop-blur-md bg-white/90 dark:bg-dark-950/90 border-t border-dark-200/20 dark:border-dark-700/20 relative z-50"
+                  >
                   <div className="px-4 py-6 space-y-2">
                      {navLinks.map((link, index) => {
                         const isActive = activeSection === link.href.substring(1)
@@ -284,6 +295,7 @@ export default function Navbar() {
                      </motion.button>
                   </div>
                </motion.div>
+               </>
             )}
          </AnimatePresence>
       </motion.nav>
