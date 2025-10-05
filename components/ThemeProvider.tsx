@@ -21,7 +21,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
       const initialTheme = savedTheme || systemTheme
       setTheme(initialTheme)
-      document.documentElement.classList.toggle('dark', initialTheme === 'dark')
+      // Only update if different from what's already set
+      if (initialTheme === 'dark' && !document.documentElement.classList.contains('dark')) {
+         document.documentElement.classList.add('dark')
+      } else if (initialTheme === 'light' && document.documentElement.classList.contains('dark')) {
+         document.documentElement.classList.remove('dark')
+      }
    }, [])
 
    const toggleTheme = () => {
