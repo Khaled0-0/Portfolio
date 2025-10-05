@@ -3,6 +3,7 @@ import { Raleway } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Navbar from '@/components/Navbar'
+import AnimatedCursor from '@/components/AnimatedCursor'
 
 const raleway = Raleway({
    subsets: ['latin'],
@@ -47,6 +48,7 @@ export default function RootLayout({
          </head>
          <body className={raleway.className}>
             <ThemeProvider>
+               <AnimatedCursor />
                <Navbar />
                {children}
             </ThemeProvider>

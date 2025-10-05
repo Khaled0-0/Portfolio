@@ -36,6 +36,10 @@ const config: Config = {
                950: '#020617',
             }
          },
+         scale: {
+            '98': '0.98',
+            '102': '1.02',
+         },
          animation: {
             'fade-in': 'fadeIn 0.5s ease-in-out',
             'slide-up': 'slideUp 0.5s ease-out',

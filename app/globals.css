@@ -19,6 +19,12 @@
    body {
       @apply bg-white dark:bg-dark-950 text-dark-900 dark:text-dark-50 transition-colors duration-300;
       min-height: 100vh;
+      cursor: none;
+   }
+
+   /* Hide default cursor for custom animated cursor */
+   * {
+      cursor: none !important;
    }
 
    h1,
@@ -46,15 +52,27 @@
    }
 
    .card-hover {
-      @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+      @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer;
+   }
+
+   .card-hover:active {
+      @apply scale-98;
    }
 
    .btn-primary {
-      @apply px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105;
+      @apply px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer;
+   }
+
+   .btn-primary:active {
+      @apply scale-95;
    }
 
    .btn-outline {
-      @apply px-6 py-3 border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white rounded-lg font-medium transition-all duration-300;
+      @apply px-6 py-3 border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white rounded-lg font-medium transition-all duration-300 cursor-pointer;
+   }
+
+   .btn-outline:active {
+      @apply scale-95;
    }
 
    /* Skeleton Loading */
@@ -105,6 +123,19 @@
 
    .scrollbar-hide::-webkit-scrollbar {
       display: none;
+   }
+
+   /* Shadcn-style cursor */
+   .cursor-pointer {
+      cursor: pointer;
+   }
+
+   .cursor-default {
+      cursor: default;
+   }
+
+   .cursor-not-allowed {
+      cursor: not-allowed;
    }
 }
 
