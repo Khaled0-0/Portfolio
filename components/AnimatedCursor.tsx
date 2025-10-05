@@ -18,6 +18,7 @@ interface Particle {
 export default function AnimatedCursor() {
    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
    const [particles, setParticles] = useState<Particle[]>([])
+   const [isMounted, setIsMounted] = useState(false)
    const particleIdRef = useRef(0)
 
    const colorsRef = useRef([
@@ -28,6 +29,14 @@ export default function AnimatedCursor() {
    ])
 
    useEffect(() => {
+      // Ensure we're in the browser
+      setIsMounted(true)
+      
+      // Check if we're on a mobile device
+      if (typeof window !== 'undefined' && 'ontouchstart' in window) {
+         return // Don't show cursor on touch devices
+      }
+
       let animationFrameId: number
 
       const updateMousePosition = (e: MouseEvent) => {
@@ -68,14 +77,25 @@ export default function AnimatedCursor() {
          animationFrameId = requestAnimationFrame(animateParticles)
       }
 
-      window.addEventListener('mousemove', updateMousePosition)
-      animateParticles()
+      if (typeof window !== 'undefined') {
+         window.addEventListener('mousemove', updateMousePosition)
+         animateParticles()
+      }
 
       return () => {
-         window.removeEventListener('mousemove', updateMousePosition)
-         cancelAnimationFrame(animationFrameId)
+         if (typeof window !== 'undefined') {
+            window.removeEventListener('mousemove', updateMousePosition)
+         }
+         if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId)
+         }
       }
    }, [])
+
+   // Don't render until mounted (prevents SSR issues)
+   if (!isMounted) {
+      return null
+   }
 
    return (
       <>
@@ -91,27 +111,32 @@ export default function AnimatedCursor() {
          </motion.div>
 
          {/* Spreading meteor particles */}
-         {particles.map((particle) => (
-            <div
-               key={particle.id}
-               className="fixed top-0 left-0 pointer-events-none z-[9998]"
-               style={{
-                  left: particle.x - particle.size / 2,
-                  top: particle.y - particle.size / 2,
-                  opacity: particle.opacity,
-                  transform: `scale(${particle.opacity}) rotate(${particle.rotation}deg)`,
-                  transition: 'opacity 0.1s ease-out',
-               }}
-            >
+         {particles.map((particle) => {
+            // Safety check for valid positions
+            if (!isFinite(particle.x) || !isFinite(particle.y)) return null
+            
+            return (
                <div
-                  className={`bg-gradient-to-br ${particle.color} rounded-full shadow-lg`}
+                  key={particle.id}
+                  className="fixed top-0 left-0 pointer-events-none z-[9998]"
                   style={{
-                     width: `${particle.size}px`,
-                     height: `${particle.size}px`,
+                     left: `${particle.x - particle.size / 2}px`,
+                     top: `${particle.y - particle.size / 2}px`,
+                     opacity: particle.opacity,
+                     transform: `scale(${Math.max(0, particle.opacity)}) rotate(${particle.rotation}deg)`,
+                     willChange: 'transform, opacity',
                   }}
-               />
-            </div>
-         ))}
+               >
+                  <div
+                     className={`bg-gradient-to-br ${particle.color} rounded-full shadow-lg`}
+                     style={{
+                        width: `${particle.size}px`,
+                        height: `${particle.size}px`,
+                     }}
+                  />
+               </div>
+            )
+         })}
 
          {/* Single optimized glow */}
          <motion.div
