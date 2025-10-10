@@ -180,9 +180,8 @@ export default function About() {
                   </motion.div>
 
                   <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                     Powered by{' '}
                      <span className="bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                        Modern AI Tools
+                        AI-Powered Development
                      </span>
                   </h3>
 
