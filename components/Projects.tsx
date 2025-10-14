@@ -3,10 +3,19 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { HiExternalLink, HiStar, HiEye, HiChip } from 'react-icons/hi'
+import { HiExternalLink, HiStar, HiEye } from 'react-icons/hi'
 import Image from 'next/image'
 
 const projects = [
+   {
+      title: 'Helios Marine',
+      description: 'Luxury yacht dealership website showcasing Nordkapp boats in the UAE market. Features Scandinavian engineering design, premium user experience, and elegant animations. Built with Next.js 15, Framer Motion, and deployed on Vercel.',
+      image: '/images/helios.png',
+      tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel', 'Luxury Design'],
+      liveUrl: 'https://www.heliosmarine.ae/',
+      featured: true,
+      category: 'Luxury Website',
+   },
    {
       title: 'BoatingX',
       description: 'Modern e-commerce platform for boats and marine products with secure checkout, custom domain integration, and responsive design. Built with Next.js and deployed on Vercel.',
