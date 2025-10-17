@@ -125,7 +125,7 @@ Update your personal information in:
 ### Images
 
 Replace images in the `/images` directory:
-- `profile.jpeg` - Your profile photo
+- `new-profile.png` - Your profile photo
 - `p*.png` - Project screenshots
 - `KN frontend developer(CV).pdf` - Your resume
 

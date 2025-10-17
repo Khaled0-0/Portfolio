@@ -9,7 +9,7 @@ call npm install
 
 echo.
 echo [2/3] Checking images folder...
-if exist "public\images\profile.jpeg" (
+if exist "public\images\new-profile.png" (
     echo ✓ Images folder is ready
 ) else (
     echo ⚠ Images might be missing. Run: xcopy images public\images\ /E /I /Y

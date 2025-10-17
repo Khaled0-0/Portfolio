@@ -44,7 +44,7 @@ ln -s ../images public/images
 The code already references images correctly as `/images/...` which will work once you copy/link the folder to `public/`.
 
 Make sure you have these key images:
-- `public/images/profile.jpeg` - Your profile photo
+- `public/images/new-profile.png` - Your profile photo
 - `public/images/p*.png` - Project screenshots
 - `public/images/KN frontend developer(CV).pdf` - Your resume
 

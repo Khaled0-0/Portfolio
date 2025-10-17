@@ -130,7 +130,7 @@ export default function Hero() {
                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full blur-3xl opacity-20 animate-pulse" />
                      <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-500/50 shadow-2xl">
                         <Image
-                           src="/images/profile.jpeg"
+                           src="/images/new-profile.png"
                            alt="Khaled Nasser"
                            fill
                            className="object-cover"

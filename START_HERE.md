@@ -93,7 +93,7 @@ portfolio-nextjs/
 │   └── ThemeProvider.tsx     # Dark/Light mode logic
 │
 ├── 📁 public/images/         # Your images
-│   ├── profile.jpeg          # Your profile photo
+│   ├── new-profile.png          # Your profile photo
 │   ├── p*.png                # Project screenshots
 │   └── KN frontend developer(CV).pdf
 │
