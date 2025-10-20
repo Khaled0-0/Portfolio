@@ -23,16 +23,7 @@ const projects = [
       tags: ['Next.js', 'React.js', 'Tailwind CSS', 'Vercel', 'E-commerce'],
       liveUrl: 'https://www.boatingx.co/',
       featured: true,
-      category: 'E-commerce',
-   },
-   {
-      title: 'Chat Application',
-      description: 'Real-time chat app with Socket.IO, MongoDB, and JWT authentication. Features typing indicators, user status, custom avatars, and real-time message delivery.',
-      image: '/images/p11.png',
-      tags: ['React.js', 'Socket.io', 'MongoDB', 'Node.js', 'TypeScript', 'JWT'],
-      liveUrl: 'https://chat-app-2-eta.vercel.app/',
-      featured: true,
-      category: 'Full-Stack',
+      category: 'Luxury Website',
    },
    {
       title: 'Extension Manager',
