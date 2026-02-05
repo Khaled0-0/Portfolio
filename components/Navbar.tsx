@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { HiMenu, HiX, HiSun, HiMoon, HiDownload } from 'react-icons/hi'
 import { useTheme } from './ThemeProvider'
 
@@ -13,47 +13,38 @@ const navLinks = [
    { name: 'Contact', href: '#contact' },
 ]
 
+const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'contact'] as const
+const HEADER_OFFSET = 100
+
+function getActiveSection(): (typeof SECTION_IDS)[number] {
+   const scrollY = window.scrollY + HEADER_OFFSET
+   let current: (typeof SECTION_IDS)[number] = 'home'
+   for (const id of SECTION_IDS) {
+      const el = document.getElementById(id)
+      if (el && el.offsetTop <= scrollY) current = id
+   }
+   return current
+}
+
 export default function Navbar() {
    const [isOpen, setIsOpen] = useState(false)
    const [scrolled, setScrolled] = useState(false)
    const [mounted, setMounted] = useState(false)
    const [activeSection, setActiveSection] = useState('home')
    const { theme, toggleTheme } = useTheme()
+   const prefersReducedMotion = useReducedMotion()
 
    useEffect(() => {
       setMounted(true)
    }, [])
 
    useEffect(() => {
-      const observerOptions = {
-         rootMargin: '-50% 0px -50% 0px',
-         threshold: 0,
-      }
-
-      const observerCallback = (entries: IntersectionObserverEntry[]) => {
-         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-               setActiveSection(entry.target.id)
-            }
-         })
-      }
-
-      const observer = new IntersectionObserver(observerCallback, observerOptions)
-
-      const sections = ['home', 'about', 'skills', 'projects', 'contact']
-      sections.forEach((id) => {
-         const element = document.getElementById(id)
-         if (element) observer.observe(element)
-      })
-
-      return () => observer.disconnect()
-   }, [])
-
-   useEffect(() => {
       const handleScroll = () => {
          setScrolled(window.scrollY > 50)
+         setActiveSection(getActiveSection())
       }
-      window.addEventListener('scroll', handleScroll)
+      handleScroll()
+      window.addEventListener('scroll', handleScroll, { passive: true })
       return () => window.removeEventListener('scroll', handleScroll)
    }, [])
 
@@ -83,13 +74,33 @@ export default function Navbar() {
          <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-               ? 'backdrop-blur-md bg-white/70 dark:bg-dark-950/70 shadow-md'
-               : 'bg-transparent'
-               }`}
+            className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 sm:px-6 lg:px-8"
          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-               <div className="flex justify-between items-center h-16">
+            <div className="max-w-7xl mx-auto relative rounded-2xl overflow-hidden p-[2px] nav-border-glow">
+               {/* Rotating gradient border */}
+               {prefersReducedMotion ? (
+                  <div
+                     className="absolute inset-0 rounded-2xl pointer-events-none"
+                     style={{
+                        background: 'conic-gradient(from 0deg, transparent 0%, rgba(56, 189, 248, 0.8) 25%, rgba(14, 165, 233, 0.9) 50%, rgba(2, 132, 199, 0.8) 75%, transparent 100%)',
+                     }}
+                  />
+               ) : (
+                  <motion.div
+                     className="absolute inset-0 rounded-2xl pointer-events-none"
+                     style={{
+                        background: 'conic-gradient(from 0deg, transparent 0%, rgba(56, 189, 248, 0.8) 25%, rgba(14, 165, 233, 0.9) 50%, rgba(2, 132, 199, 0.8) 75%, transparent 100%)',
+                     }}
+                     animate={{ rotate: 360 }}
+                     transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+                  />
+               )}
+               <div
+                  className={`relative rounded-[14px] backdrop-blur-xl bg-white/60 dark:bg-dark-950/60 transition-all duration-500
+                     shadow-lg shadow-primary-500/10 dark:shadow-primary-500/5
+                     ${scrolled ? 'shadow-xl shadow-primary-500/15' : ''}`}
+               >
+               <div className="flex justify-between items-center h-16 px-4 sm:px-6 lg:px-8">
                   {/* Enhanced Logo */}
                   <motion.a
                      href="#home"
@@ -237,16 +248,15 @@ export default function Navbar() {
                      </motion.button>
                   </div>
                </div>
-            </div>
 
-            {/* Mobile Menu */}
-            <AnimatePresence>
+               {/* Mobile Menu */}
+               <AnimatePresence>
                {isOpen && (
                   <motion.div
                      initial={{ opacity: 0, height: 0 }}
                      animate={{ opacity: 1, height: 'auto' }}
                      exit={{ opacity: 0, height: 0 }}
-                     className="lg:hidden backdrop-blur-md bg-white/90 dark:bg-dark-950/90 border-t border-dark-200/20 dark:border-dark-700/20 relative z-50"
+                     className="lg:hidden rounded-b-[14px] border-t border-primary-400/30 dark:border-primary-500/20 bg-white/30 dark:bg-dark-900/30 backdrop-blur-sm relative z-50"
                   >
                      <div className="px-4 py-6 space-y-2">
                         {navLinks.map((link, index) => {
@@ -286,7 +296,9 @@ export default function Navbar() {
                      </div>
                   </motion.div>
                )}
-            </AnimatePresence>
+               </AnimatePresence>
+            </div>
+         </div>
          </motion.nav>
 
          {/* Mobile Menu Backdrop - Outside Navbar */}

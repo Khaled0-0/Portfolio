@@ -5,7 +5,7 @@ import Skeleton from './Skeleton'
 
 export default function SkeletonContact() {
    return (
-      <section className="section-container bg-dark-50 dark:bg-dark-900/50 relative overflow-hidden">
+      <section className="section-container bg-white dark:bg-black relative overflow-hidden transition-colors duration-300">
          {/* Decorative Background */}
          <div className="absolute top-20 right-10 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl" />
          <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl" />

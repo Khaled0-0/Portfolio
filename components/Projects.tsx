@@ -89,7 +89,7 @@ export default function Projects() {
    const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.featured)
 
    return (
-      <section id="projects" className="section-container relative overflow-hidden" ref={ref}>
+      <section id="projects" className="section-container relative overflow-hidden transition-colors duration-300" ref={ref}>
          {/* Decorative Background */}
          <div className="absolute top-20 right-10 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl" />
          <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl" />
@@ -130,7 +130,7 @@ export default function Projects() {
                      onClick={() => setFilter('all')}
                      className={`px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${filter === 'all'
                         ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
-                        : 'bg-white dark:bg-dark-800 text-dark-700 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700 border-2 border-dark-200 dark:border-dark-700'
+                        : 'bg-white dark:bg-dark-800 text-dark-700 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700 border-2 border-dark-300 dark:border-dark-700'
                         }`}
                   >
                      All Projects
@@ -139,7 +139,7 @@ export default function Projects() {
                      onClick={() => setFilter('featured')}
                      className={`px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center gap-2 ${filter === 'featured'
                         ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
-                        : 'bg-white dark:bg-dark-800 text-dark-700 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700 border-2 border-dark-200 dark:border-dark-700'
+                        : 'bg-white dark:bg-dark-800 text-dark-700 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700 border-2 border-dark-300 dark:border-dark-700'
                         }`}
                   >
                      <HiStar className="w-4 h-4" />
@@ -153,7 +153,7 @@ export default function Projects() {
                {filteredProjects.map((project, index) => (
                   <motion.div
                      key={project.title}
-                     className="group relative bg-white dark:bg-dark-800 rounded-2xl overflow-hidden border-2 border-dark-200/50 dark:border-dark-700/50 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-lg hover:shadow-2xl transition-all duration-500"
+                     className="group relative bg-white dark:bg-dark-800 rounded-2xl overflow-hidden border-2 border-dark-300 dark:border-dark-700/50 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-lg hover:shadow-2xl transition-all duration-500"
                      initial={{ opacity: 0, y: 30 }}
                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                      transition={{ delay: 0.5 + index * 0.1 }}
@@ -213,7 +213,7 @@ export default function Projects() {
                            {project.tags.map((tag) => (
                               <span
                                  key={tag}
-                                 className="px-3 py-1 text-xs bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-lg font-medium border border-primary-200/50 dark:border-primary-700/50"
+                                 className="px-3 py-1 text-xs bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-lg font-medium border-2 border-primary-300 dark:border-primary-700/50"
                               >
                                  {tag}
                               </span>

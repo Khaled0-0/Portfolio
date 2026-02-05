@@ -122,7 +122,7 @@ export default function About() {
                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                transition={{ delay: 0.4 }}
             >
-               <div className="bg-gradient-to-br from-white to-primary-50/30 dark:from-dark-800 dark:to-primary-900/10 rounded-2xl p-8 md:p-12 border-2 border-primary-500/20 dark:border-primary-500/30 shadow-xl">
+               <div className="bg-gradient-to-br from-white to-primary-50/30 dark:from-dark-800 dark:to-primary-900/10 rounded-2xl p-8 md:p-12 border-2 border-primary-300/60 dark:border-primary-500/30 shadow-xl ring-1 ring-dark-200 dark:ring-dark-700">
                   <p className="text-lg text-dark-700 dark:text-dark-300 mb-6 leading-relaxed">
                      I started my <span className="text-primary-500 font-semibold">frontend development journey in January 2023</span>, driven by a desire for{' '}
                      <span className="font-semibold">financial independence</span> and{' '}
@@ -199,7 +199,7 @@ export default function About() {
                   {aiTools.map((tool, index) => (
                      <motion.div
                         key={tool.name}
-                        className="group relative bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-dark-200/50 dark:border-dark-700/50 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden w-full max-w-sm md:max-w-none"
+                        className="group relative bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-dark-300 dark:border-dark-700/50 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden w-full max-w-sm md:max-w-none"
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                         transition={{ delay: 0.6 + index * 0.1 }}
@@ -224,7 +224,7 @@ export default function About() {
 
                {/* AI Advantages - Compact & Modern */}
                <motion.div
-                  className="bg-white dark:bg-dark-800 rounded-2xl p-6 border border-dark-200 dark:border-dark-700 shadow-lg"
+                  className="bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-dark-300 dark:border-dark-700 shadow-lg"
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ delay: 0.9 }}
@@ -240,7 +240,7 @@ export default function About() {
                      {aiAdvantages.map((advantage, index) => (
                         <motion.div
                            key={advantage}
-                           className="flex items-center gap-3 p-3 rounded-xl bg-dark-50 dark:bg-dark-700/50 hover:bg-primary-50 dark:hover:bg-primary-900/20 border border-transparent hover:border-primary-500/30 transition-all duration-200"
+                           className="flex items-center gap-3 p-3 rounded-xl bg-dark-50 dark:bg-dark-700/50 hover:bg-primary-50 dark:hover:bg-primary-900/20 border-2 border-dark-200 dark:border-transparent hover:border-primary-500/40 dark:hover:border-primary-500/30 transition-all duration-200"
                            initial={{ opacity: 0, x: -10 }}
                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                            transition={{ delay: 1 + index * 0.05 }}
@@ -258,7 +258,7 @@ export default function About() {
                {motivations.map((item, index) => (
                   <motion.div
                      key={item.title}
-                     className="group bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-primary-500/20 dark:border-primary-500/30 shadow-lg hover:shadow-2xl hover:border-primary-500/50 dark:hover:border-primary-500/60 transition-all duration-300 hover:-translate-y-2"
+                     className="group bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-primary-400/50 dark:border-primary-500/30 shadow-lg hover:shadow-2xl hover:border-primary-500/50 dark:hover:border-primary-500/60 transition-all duration-300 hover:-translate-y-2"
                      initial={{ opacity: 0, y: 30 }}
                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                      transition={{ delay: 0.5 + index * 0.1 }}
@@ -287,7 +287,7 @@ export default function About() {
                   {journeyStages.map((stage, index) => (
                      <motion.div
                         key={stage.title}
-                        className="group relative bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-dark-200/50 dark:border-dark-700/50 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                        className="group relative bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-dark-300 dark:border-dark-700/50 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                         transition={{ delay: 1 + index * 0.15 }}
@@ -298,7 +298,7 @@ export default function About() {
 
                         {/* Stage Badge */}
                         <div className="absolute top-4 right-4">
-                           <span className="text-xs px-3 py-1 rounded-full font-bold bg-primary-500/10 text-primary-600 dark:text-primary-400 border border-primary-500/20">
+                           <span className="text-xs px-3 py-1 rounded-full font-bold bg-primary-500/10 text-primary-600 dark:text-primary-400 border-2 border-primary-400/60 dark:border-primary-500/20">
                               {stage.stage}
                            </span>
                         </div>

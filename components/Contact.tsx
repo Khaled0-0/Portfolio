@@ -95,7 +95,7 @@ export default function Contact() {
    }
 
    return (
-      <section id="contact" className="section-container bg-dark-50 dark:bg-dark-900/50" ref={ref}>
+      <section id="contact" className="section-container transition-colors duration-300" ref={ref}>
          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -180,7 +180,7 @@ export default function Contact() {
                               href={social.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="group relative w-14 h-14 bg-white dark:bg-dark-800 rounded-xl flex items-center justify-center border-2 border-dark-200 dark:border-dark-700 hover:border-primary-500 dark:hover:border-primary-500 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+                              className="group relative w-14 h-14 bg-white dark:bg-dark-800 rounded-xl flex items-center justify-center border-2 border-dark-300 dark:border-dark-700 hover:border-primary-500 dark:hover:border-primary-500 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
                               whileHover={{ scale: 1.15, y: -8, rotate: 5 }}
                               whileTap={{ scale: 0.9 }}
                               initial={{ opacity: 0, scale: 0 }}
@@ -222,7 +222,7 @@ export default function Contact() {
                               id="name"
                               name="name"
                               required
-                              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark-800 border border-dark-300 dark:border-dark-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
+                              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark-800 border-2 border-dark-300 dark:border-dark-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
                            />
                         </div>
 
@@ -235,7 +235,7 @@ export default function Contact() {
                               id="email"
                               name="email"
                               required
-                              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark-800 border border-dark-300 dark:border-dark-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
+                              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark-800 border-2 border-dark-300 dark:border-dark-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
                            />
                         </div>
 
@@ -248,7 +248,7 @@ export default function Contact() {
                               name="message"
                               rows={5}
                               required
-                              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark-800 border border-dark-300 dark:border-dark-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all resize-none"
+                              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark-800 border-2 border-dark-300 dark:border-dark-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all resize-none"
                            />
                         </div>
 

@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { HiArrowDown, HiSparkles } from 'react-icons/hi'
 import { SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss } from 'react-icons/si'
-import { FaCode } from 'react-icons/fa'
 import Image from 'next/image'
+import { HoleBackground } from '@/components/animate-ui/components/backgrounds/hole'
 
 export default function Hero() {
    const scrollToSection = (href: string) => {
@@ -21,13 +21,21 @@ export default function Hero() {
 
    return (
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-         {/* Animated Background */}
-         <div className="absolute inset-0 -z-10">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+         {/* Animated Hole Background */}
+         <div className="absolute inset-0 z-0">
+            <HoleBackground
+               className="size-full bg-white dark:bg-dark-950 opacity-85"
+               strokeColor="#64748b"
+               numberOfLines={60}
+               numberOfDiscs={60}
+               particleRGBColor={[56, 189, 248]}
+            />
+            {/* Dark overlay layers - dark mode only */}
+            <div className="absolute inset-0 hidden bg-gradient-to-b from-black/35 via-black/45 to-black/65 dark:block pointer-events-none" />
+            <div className="absolute inset-0 hidden dark:block bg-black/35 pointer-events-none" />
          </div>
 
-         <div className="section-container">
+         <div className="section-container relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
                {/* Text Content */}
                <motion.div
@@ -128,7 +136,7 @@ export default function Hero() {
                      transition={{ duration: 0.3 }}
                   >
                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full blur-3xl opacity-20 animate-pulse" />
-                     <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-500/50 shadow-2xl">
+                     <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-400 dark:border-primary-500/50 shadow-2xl ring-2 ring-dark-200 dark:ring-dark-700">
                         <Image
                            src="/images/new-profile.png"
                            alt="Khaled Nasser"

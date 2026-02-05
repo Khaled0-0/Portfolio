@@ -62,7 +62,7 @@ export default function Skills() {
       : allSkills.filter(skill => skill.category.toLowerCase() === activeCategory)
 
    return (
-      <section id="skills" className="section-container bg-dark-50 dark:bg-dark-900/50 relative overflow-hidden" ref={ref}>
+      <section id="skills" className="section-container relative overflow-hidden transition-colors duration-300" ref={ref}>
          {/* Decorative Background Elements */}
          <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500/5 rounded-full blur-3xl" />
          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-400/5 rounded-full blur-3xl" />
@@ -106,7 +106,7 @@ export default function Skills() {
                      onClick={() => setActiveCategory(category)}
                      className={`px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 whitespace-nowrap flex-shrink-0 ${activeCategory === category
                         ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
-                        : 'bg-white dark:bg-dark-800 text-dark-700 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700 border-2 border-dark-200 dark:border-dark-700'
+                        : 'bg-white dark:bg-dark-800 text-dark-700 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-700 border-2 border-dark-300 dark:border-dark-700'
                         }`}
                   >
                      {category === 'ai' ? 'AI Tools' : category.charAt(0).toUpperCase() + category.slice(1)}
@@ -123,7 +123,7 @@ export default function Skills() {
                   <motion.div
                      key={skill.name}
                      layout
-                     className="group relative bg-white dark:bg-dark-800 rounded-2xl p-5 border-2 border-dark-200/50 dark:border-dark-700/50 hover:border-primary-500 dark:hover:border-primary-500 shadow-md hover:shadow-2xl hover:shadow-primary-500/20 transition-all duration-300 cursor-pointer overflow-hidden"
+                     className="group relative bg-white dark:bg-dark-800 rounded-2xl p-5 border-2 border-dark-300 dark:border-dark-700/50 hover:border-primary-500 dark:hover:border-primary-500 shadow-md hover:shadow-2xl hover:shadow-primary-500/20 transition-all duration-300 cursor-pointer overflow-hidden"
                      initial={{ opacity: 0, scale: 0.8 }}
                      animate={{ opacity: 1, scale: 1 }}
                      exit={{ opacity: 0, scale: 0.8 }}
@@ -200,7 +200,7 @@ export default function Skills() {
                   {additionalSkills.map((skill, index) => (
                      <motion.div
                         key={skill.name}
-                        className="group relative bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-dark-200/50 dark:border-dark-700/50 hover:border-primary-500 dark:hover:border-primary-500 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden"
+                        className="group relative bg-white dark:bg-dark-800 rounded-2xl p-6 border-2 border-dark-300 dark:border-dark-700/50 hover:border-primary-500 dark:hover:border-primary-500 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                         transition={{ delay: 0.9 + index * 0.04 }}
@@ -265,14 +265,14 @@ export default function Skills() {
                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                transition={{ delay: 1.2 }}
             >
-               <div className="bg-gradient-to-r from-primary-500/10 via-primary-600/10 to-primary-500/10 dark:from-primary-500/20 dark:via-primary-600/20 dark:to-primary-500/20 rounded-2xl p-8 border border-primary-500/20 dark:border-primary-500/30">
+               <div className="bg-gradient-to-r from-primary-500/10 via-primary-600/10 to-primary-500/10 dark:from-primary-500/20 dark:via-primary-600/20 dark:to-primary-500/20 rounded-2xl p-8 border-2 border-primary-400/50 dark:border-primary-500/30 ring-1 ring-dark-200 dark:ring-dark-700">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                     <div>
+                     <div className="md:border-r-2 md:border-dark-300 dark:md:border-dark-600 md:pr-6">
                         <HiSparkles className="w-8 h-8 text-primary-500 mx-auto mb-2" />
                         <h4 className="font-bold text-dark-900 dark:text-white mb-1">Modern Stack</h4>
                         <p className="text-sm text-dark-600 dark:text-dark-400">Latest technologies & best practices</p>
                      </div>
-                     <div>
+                     <div className="md:border-r-2 md:border-dark-300 dark:md:border-dark-600 md:pr-6">
                         <HiLightningBolt className="w-8 h-8 text-primary-500 mx-auto mb-2" />
                         <h4 className="font-bold text-dark-900 dark:text-white mb-1">Fast Development</h4>
                         <p className="text-sm text-dark-600 dark:text-dark-400">Efficient workflow & rapid delivery</p>
