@@ -20,7 +20,7 @@ export default function Hero() {
    }
 
    return (
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 sm:pt-28">
          {/* Animated Hole Background */}
          <div className="absolute inset-0 z-0">
             <HoleBackground
